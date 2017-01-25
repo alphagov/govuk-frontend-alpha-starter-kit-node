@@ -25,3 +25,18 @@ Install Express and save it in the dependencies list in `package.json`:
 
 `$ npm install express --save`
 
+#### Install [Gulp.js](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
+
+Install the `gulp` command
+
+`$ npm install --global gulp-cli`
+
+Install `gulp` in your devDependencies
+
+Run this command in this project's directory:
+
+`$ npm install --save-dev gulp`
+
+
+
+
