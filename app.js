@@ -1,13 +1,15 @@
 var express = require('express')
 var nunjucks = require('nunjucks')
 var app = express()
+var path = require('path')
 
 // Set the template engine to use nunjucks
 app.set('view engine', 'nunjucks')
 
 // Set the location of the template files
 var appViews = [
-  'views'
+  path.join(__dirname, 'views'),
+  path.join(__dirname, '/node_modules/govuk_frontend_alpha/templates/')
 ]
 
 // Tell nunjucks we are using express to serve the templates within
