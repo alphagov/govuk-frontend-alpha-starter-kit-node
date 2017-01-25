@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/alphagov/govuk-frontend-alpha-starter-kit-node/issues"
   },
-  "homepage": "https://github.com/alphagov/govuk-frontend-alpha-starter-kit-node#readme"
+  "homepage": "https://github.com/alphagov/govuk-frontend-alpha-starter-kit-node#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
