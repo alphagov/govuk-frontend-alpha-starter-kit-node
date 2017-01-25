@@ -7,6 +7,7 @@ const sass = require('gulp-sass')
 const rename = require('gulp-rename')
 const del = require('del')
 const runsequence = require('run-sequence')
+const nodemon = require('gulp-nodemon')
 
 // Clean task ----------------------------
 // Deletes the /public directory
@@ -54,14 +55,46 @@ gulp.task('build', cb => {
   runsequence('clean', ['styles', 'images', 'scripts'], cb)
 })
 
+// Develop task --------------------------
+// Runs build task and sets up watches.
+// ---------------------------------------
+gulp.task('develop', cb => {
+  runsequence('build',
+              'watch',
+              'server', cb)
+})
+
+// Server task --------------------------
+// Runs build task and sets up watches.
+// ---------------------------------------
+gulp.task('server', () => {
+  nodemon({
+    script: 'app.js',
+    ext: 'js, json',
+    ignore: [
+      paths.public + '*',
+      paths.assets + '*',
+      paths.nodeModules + '*'
+    ]
+  })
+})
+
 // Watch task ----------------------------
 // When a file is changed, re-run the build task.
 // ---------------------------------------
 
-gulp.task('watch', function () {
-  gulp.watch(paths.assetsScss, ['styles'])
-  gulp.watch(paths.assetsJs, ['scripts'])
-  gulp.watch(paths.assetsJs, ['images'])
+gulp.task('watch', ['watch:styles', 'watch:scripts', 'watch:images'])
+
+gulp.task('watch:styles', () => {
+  return gulp.watch(paths.assetsScss + '**/*.scss', ['styles'])
+})
+
+gulp.task('watch:scripts', () => {
+  return gulp.watch(paths.assetsJs + '**/*.js', ['scripts'])
+})
+
+gulp.task('watch:images', () => {
+  return gulp.watch(paths.assetsImg + '**/*', ['images'])
 })
 
 // Default task --------------------------
