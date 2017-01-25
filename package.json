@@ -1,0 +1,19 @@
+{
+  "name": "govuk-frontend-alpha-starter-kit-node",
+  "version": "0.0.1",
+  "description": "A starter kit to be used for research (not for production use)",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alphagov/govuk-frontend-alpha-starter-kit-node.git"
+  },
+  "author": "Government Digital Service developers <govuk-dev@digital.cabinet-office.gov.uk> (http://digital.cabinetoffice.gov.uk)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alphagov/govuk-frontend-alpha-starter-kit-node/issues"
+  },
+  "homepage": "https://github.com/alphagov/govuk-frontend-alpha-starter-kit-node#readme"
+}
