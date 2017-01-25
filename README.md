@@ -58,6 +58,28 @@ In the browser, you will see 'Hello world'.
 
 Use control and c to stop the server.
 
+#### Set up middleware for static assets
+
+To serve static files such as images, CSS files, and JavaScript
+files, we use the express.static built-in middleware function in Express.
+
+In app.js add:
+
+```
+app.use('/public', express.static('/public/'))
+```
+
+#### Send assetPath to all views
+
+In app.js add:
+
+```
+app.use(function (req, res, next) {
+  res.locals.asset_path = '/public/'
+  next()
+})
+```
+
 #### Add [Nunjucks](https://www.npmjs.com/package/nunjucks)
 
 GOV.UK Frontend Alpha uses Nunjucks as its templating language.
