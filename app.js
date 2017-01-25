@@ -17,7 +17,7 @@ nunjucks.configure(appViews, {
 })
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  res.render('index.njk')
 })
 
 app.listen(3000, function () {

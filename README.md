@@ -77,6 +77,42 @@ Set the template engine to use nunjucks:
 app.set('view engine', 'nunjucks')
 ```
 
+### Create a layout template and an index page
+
+Create a file called layout.njk in your project's `/views/` directory.
+
+`touch layout.njk` in `/views/`
+
+Add the following code:
+
+```
+Layout template
+
+{% block content %}
+{% endblock %}
+```
+
+Create a file called index.njk in your project's `/views/` directory.
+
+`touch index.njk` in `/views/`
+
+Add the following code:
+
+```
+{% extends 'layout.njk' %}
+
+{% block content %}
+  Hello world
+{% endblock %}
+```
+
+Restart your app.
+
+Start your app using `node app.js`
+
+Then, load http://localhost:3000/ in a browser.
+
+In the browser, you will see 'Layout template Hello world'.
 
 #### Install [Gulp.js](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 
