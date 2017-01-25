@@ -58,6 +58,25 @@ In the browser, you will see 'Hello world'.
 
 Use control and c to stop the server.
 
+#### Add [Nunjucks](https://www.npmjs.com/package/nunjucks)
+
+GOV.UK Frontend Alpha uses Nunjucks as its templating language.
+
+Install Nunjucks and save it to the dependencies list in `package.json`:
+
+`$ npm install nunjucks --save`
+
+At the top of app js:
+
+`var nunjucks = require('nunjucks')`
+
+Set the template engine to use nunjucks:
+
+```
+// Set the template engine to use nunjucks
+app.set('view engine', 'nunjucks')
+```
+
 
 #### Install [Gulp.js](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 
