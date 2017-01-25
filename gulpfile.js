@@ -6,8 +6,26 @@ var gutil = require('gulp-util')
 var sass = require('gulp-sass')
 var rename = require('gulp-rename')
 
+// Default task --------------------------
+// Lists out available tasks.
+// ---------------------------------------
+
 gulp.task('default', function () {
-  console.log('Default task')
+  const cyan = gutil.colors.cyan
+  const green = gutil.colors.green
+
+  gutil.log(green('----------'))
+
+  gutil.log(('The following main ') + cyan('tasks') + (' are available:'))
+
+  gutil.log(cyan('build'
+    ) + ': builds the contents to the public directory.'
+  )
+  gutil.log(cyan('develop'
+    ) + ': performs an initial build then sets up watches.'
+  )
+
+  gutil.log(green('----------'))
 })
 
 // Styles build task ---------------------
