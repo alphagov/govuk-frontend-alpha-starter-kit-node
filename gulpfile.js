@@ -54,6 +54,16 @@ gulp.task('build', cb => {
   runsequence('clean', ['styles', 'images', 'scripts'], cb)
 })
 
+// Watch task ----------------------------
+// When a file is changed, re-run the build task.
+// ---------------------------------------
+
+gulp.task('watch', function () {
+  gulp.watch(paths.assetsScss, ['styles'])
+  gulp.watch(paths.assetsJs, ['scripts'])
+  gulp.watch(paths.assetsJs, ['images'])
+})
+
 // Default task --------------------------
 // Lists out available tasks.
 // ---------------------------------------
