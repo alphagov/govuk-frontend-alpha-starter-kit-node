@@ -177,6 +177,35 @@ Default task
 Finished 'default'
 ```
 
+#### Install gulp-sass
+
+* `npm install gulp-sass --save-dev`
+
+#### Add scss compilation to the project
+
+* Add an `application.scss` file to `assets/scss`
+
+#### Add a Gulp `styles` task to compile scss to css
+
+In Gulpfile.js
+
+```
+// Compile Sass to CSS
+gulp.task('styles', function () {
+  gulp.src(paths.assetsScss + '**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(paths.publicCss))
+})
+```
+
+#### Add a config file for paths
+
+Add a config file in /config/paths.json and add paths for assetsScss and publicCss.
+
+### Add the /public folder to .gitgnore
+
+The app compiles assets to /public, these don't need to be in version control.
+
 
 
 
