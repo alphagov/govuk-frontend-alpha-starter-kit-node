@@ -6,6 +6,7 @@ var gutil = require('gulp-util')
 var sass = require('gulp-sass')
 var rename = require('gulp-rename')
 var del = require('del')
+var runsequence = require('run-sequence')
 
 // Clean task ----------------------------
 // Deletes the /public directory
@@ -13,6 +14,14 @@ var del = require('del')
 
 gulp.task('clean', function () {
   return del(paths.public)
+})
+
+// Build task ----------------------------
+// Runs other tasks that produce a built project in the public directory.
+// ---------------------------------------
+
+gulp.task('build', function (callback) {
+  runsequence('clean', ['styles'], callback)
 })
 
 // Default task --------------------------
