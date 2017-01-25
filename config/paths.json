@@ -1,11 +1,11 @@
 {
 "config": "config/",
-"assetsImg": "assets/images/",
+"assetsImg": "assets/img/",
 "assetsJs": "assets/js/",
 "assetsScss": "assets/scss/",
 "views": "views/",
 "public": "public/",
 "publicImg": "public/images/",
-"publicCss": "public/css/",
-"publicJs": "public/js/"
+"publicCss": "public/stylesheets/",
+"publicJs": "public/javascripts/"
 }

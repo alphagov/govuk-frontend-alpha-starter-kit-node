@@ -1,34 +1,64 @@
 'use strict'
 
-var paths = require('./config/paths.json')
-var gulp = require('gulp')
-var gutil = require('gulp-util')
-var sass = require('gulp-sass')
-var rename = require('gulp-rename')
-var del = require('del')
-var runsequence = require('run-sequence')
+const paths = require('./config/paths.json')
+const gulp = require('gulp')
+const gutil = require('gulp-util')
+const sass = require('gulp-sass')
+const rename = require('gulp-rename')
+const del = require('del')
+const runsequence = require('run-sequence')
 
 // Clean task ----------------------------
 // Deletes the /public directory
 // ---------------------------------------
 
-gulp.task('clean', function () {
+gulp.task('clean', () => {
   return del(paths.public)
+})
+
+// Styles build task ---------------------
+// Compiles CSS from Sass
+// Output both a minified and non-minified version into /public/css.
+// ---------------------------------------
+
+gulp.task('styles', () => {
+  return gulp.src(paths.assetsScss + '**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(paths.publicCss))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest(paths.publicCss))
+})
+
+// Images build task ---------------------
+// Copies images to /public/css
+// ---------------------------------------
+
+gulp.task('images', () => {
+  return gulp.src(paths.assetsImg + '**/*')
+    .pipe(gulp.dest(paths.publicImg))
+})
+
+// Scripts build task ---------------------
+// Copies javascript to /public/js
+// ---------------------------------------
+gulp.task('scripts', () => {
+  return gulp.src(paths.assetsJs + '**/*.js')
+    .pipe(gulp.dest(paths.publicJs))
 })
 
 // Build task ----------------------------
 // Runs other tasks that produce a built project in the public directory.
 // ---------------------------------------
 
-gulp.task('build', function (callback) {
-  runsequence('clean', ['styles'], callback)
+gulp.task('build', cb => {
+  runsequence('clean', ['styles', 'images', 'scripts'], cb)
 })
 
 // Default task --------------------------
 // Lists out available tasks.
 // ---------------------------------------
 
-gulp.task('default', function () {
+gulp.task('default', () => {
   const cyan = gutil.colors.cyan
   const green = gutil.colors.green
 
@@ -44,17 +74,4 @@ gulp.task('default', function () {
   )
 
   gutil.log(green('----------'))
-})
-
-// Styles build task ---------------------
-// Compiles CSS from Sass
-// Output both a minified and non-minified version into /public/css.
-// ---------------------------------------
-
-gulp.task('styles', function () {
-  gulp.src(paths.assetsScss + '**/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest(paths.publicCss))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(paths.publicCss))
 })
