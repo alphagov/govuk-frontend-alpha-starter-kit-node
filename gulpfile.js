@@ -5,6 +5,15 @@ var gulp = require('gulp')
 var gutil = require('gulp-util')
 var sass = require('gulp-sass')
 var rename = require('gulp-rename')
+var del = require('del')
+
+// Clean task ----------------------------
+// Deletes the /public directory
+// ---------------------------------------
+
+gulp.task('clean', function () {
+  return del(paths.public)
+})
 
 // Default task --------------------------
 // Lists out available tasks.
