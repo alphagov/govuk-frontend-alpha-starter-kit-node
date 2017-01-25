@@ -33,10 +33,38 @@ Install the `gulp` command
 
 Install `gulp` in your devDependencies
 
-Run this command in this project's directory:
+Run this command in your project directory:
 
 `$ npm install --save-dev gulp`
 
+##### Create a gulpfile
+
+Create a file called gulpfile.js in your project root
+
+`$touch gulpfile.js`
+
+Add a default task to the file, by inserting the content below:
+
+```
+var gulp = require('gulp')
+
+gulp.task('default', function () {
+  console.log('Default task')
+})
+```
+
+Run the gulp command in your project directory:
+
+`gulp`
+
+You should see:
+
+```
+Using gulpfile ~/govuk-frontend-alpha-starter-kit-node/gulpfile.js
+Starting 'default'...
+Default task
+Finished 'default'
+```
 
 
 
