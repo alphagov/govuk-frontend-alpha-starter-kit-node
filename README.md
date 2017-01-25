@@ -1,35 +1,38 @@
-# GOV.UK Frontend Alpha Starter Kit - Node
+# GOV.UK Frontend Alpha - Node Starter Kit
+
+This starter kit is to be used for research and is not for production use.
+
+## Steps used to create this project
 
 This readme lists the steps to create this Node.js app, ready to consume the GOV.UK Frontend Alpha package.
-This starter kit is to be used for research and is not for production use.
 
 #### Create a new Node project
 
-`$ npm init` - add a package.json file to the repo
+* `npm init` - add a package.json file to the repo
 
 #### Add a .gitignore file to ignore node_modules
 
 You do not need to commit the project's dependencies to the repository.
 
-#### Create a gitignore file:
+Create a gitignore file:
 
-`touch .gitignore`
+* `touch .gitignore`
 
-Add to the .gitignore file
+Add to the .gitignore file:
 
-`node_modules/*`
+* `node_modules/*`
 
 #### Install [Express JS](http://expressjs.com/en/starter/installing.html)
 
 Install Express and save it in the dependencies list in `package.json`:
 
-`$ npm install express --save`
+* `npm install express --save`
 
 #### Start the app and create a server
 
-Create a file called app.js in your project directory:
+Create a file called `app.js` in your project directory:
 
-`$ touch app.js`
+* `touch app.js`
 
 Add the following code:
 
@@ -48,15 +51,15 @@ app.listen(3000, function () {
 
 Run the app with the following command:
 
-`$ node app.js`
+* `node app.js`
 
-Then, load http://localhost:3000/ in a browser.
+Then, load [http://localhost:3000/](http://localhost:3000/) in a browser.
 
 In the console, you will see `Example app listening on port 3000!`.
 
 In the browser, you will see 'Hello world'.
 
-Use control and c to stop the server.
+Use control and C to stop the server.
 
 #### Set up middleware for static assets
 
@@ -65,9 +68,7 @@ files, we use the express.static built-in middleware function in Express.
 
 In app.js add:
 
-```
-app.use('/public', express.static('/public/'))
-```
+* `app.use('/public', express.static('/public/'))`
 
 #### Send assetPath to all views
 
@@ -86,11 +87,11 @@ GOV.UK Frontend Alpha uses Nunjucks as its templating language.
 
 Install Nunjucks and save it to the dependencies list in `package.json`:
 
-`$ npm install nunjucks --save`
+* `npm install nunjucks --save`
 
 At the top of app js:
 
-`var nunjucks = require('nunjucks')`
+* `var nunjucks = require('nunjucks')`
 
 Set the template engine to use nunjucks:
 
@@ -103,7 +104,7 @@ app.set('view engine', 'nunjucks')
 
 Create a file called layout.njk in your project's `/views/` directory.
 
-`touch layout.njk` in `/views/`
+* `touch layout.njk` in `/views/`
 
 Add the following code:
 
@@ -116,7 +117,7 @@ Layout template
 
 Create a file called index.njk in your project's `/views/` directory.
 
-`touch index.njk` in `/views/`
+* `touch index.njk` in `/views/`
 
 Add the following code:
 
@@ -128,11 +129,9 @@ Add the following code:
 {% endblock %}
 ```
 
-Restart your app.
-
 Start your app using `node app.js`
 
-Then, load http://localhost:3000/ in a browser.
+Then, load [http://localhost:3000/](http://localhost:3000/) in a browser.
 
 In the browser, you will see 'Layout template Hello world'.
 
@@ -140,19 +139,19 @@ In the browser, you will see 'Layout template Hello world'.
 
 Install the `gulp` command
 
-`$ npm install --global gulp-cli`
+* `npm install --global gulp-cli`
 
 Install `gulp` in your devDependencies
 
 Run this command in your project directory:
 
-`$ npm install --save-dev gulp`
+* `npm install --save-dev gulp`
 
 ##### Create a gulpfile
 
 Create a file called gulpfile.js in your project root
 
-`$touch gulpfile.js`
+* `touch gulpfile.js`
 
 Add a default task to the file, by inserting the content below:
 
@@ -166,7 +165,7 @@ gulp.task('default', function () {
 
 Run the gulp command in your project directory:
 
-`gulp`
+* `gulp`
 
 You should see:
 
@@ -176,7 +175,3 @@ Starting 'default'...
 Default task
 Finished 'default'
 ```
-
-
-
-
