@@ -7,5 +7,15 @@ This starter kit is to be used for research and is not for production use.
 
 `$ npm init` - add a package.json file to the repo
 
+#### Add a .gitignore file to ignore node_modules
 
+You do not need to commit the project's dependencies to the repository.
+
+Create a gitignore file:
+
+`touch .gitignore`
+
+Add to the .gitignore file
+
+`node_modules/*`
 
