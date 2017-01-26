@@ -1,0 +1,12 @@
+{
+"config": "config/",
+"assetsImg": "assets/img/",
+"assetsJs": "assets/js/",
+"assetsScss": "assets/scss/",
+"nodeModules": "node_modules/",
+"views": "views/",
+"public": "public/",
+"publicImg": "public/images/",
+"publicCss": "public/stylesheets/",
+"publicJs": "public/javascripts/"
+}
