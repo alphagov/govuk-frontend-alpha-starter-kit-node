@@ -6,9 +6,10 @@ var path = require('path')
 // Set the template engine to use nunjucks
 app.set('view engine', 'nunjucks')
 
-// Set the location of the template files
+// Set the location of the component and template files
 var appViews = [
   path.join(__dirname, 'views'),
+  path.join(__dirname, '/node_modules/govuk_frontend_alpha/components/'),
   path.join(__dirname, '/node_modules/govuk_frontend_alpha/templates/')
 ]
 
