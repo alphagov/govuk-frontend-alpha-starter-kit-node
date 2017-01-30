@@ -3,6 +3,8 @@ var nunjucks = require('nunjucks')
 var app = express()
 var path = require('path')
 
+module.exports = app
+
 // Set the template engine to use nunjucks
 app.set('view engine', 'nunjucks')
 

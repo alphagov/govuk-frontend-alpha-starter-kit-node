@@ -4,6 +4,7 @@
   "description": "A starter kit to be used for research (not for production use)",
   "main": "index.js",
   "scripts": {
+    "test": "gulp test",
     "start": "gulp develop"
   },
   "repository": {
@@ -23,10 +24,12 @@
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-mocha": "^3.0.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-watch": "^4.3.11",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "supertest": "^3.0.0"
   }
 }

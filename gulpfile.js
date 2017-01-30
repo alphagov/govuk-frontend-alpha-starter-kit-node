@@ -8,6 +8,7 @@ const rename = require('gulp-rename')
 const del = require('del')
 const runsequence = require('run-sequence')
 const nodemon = require('gulp-nodemon')
+const mocha = require('gulp-mocha')
 
 // Clean task ----------------------------
 // Deletes the /public directory
@@ -96,6 +97,25 @@ gulp.task('watch:scripts', () => {
 gulp.task('watch:images', () => {
   return gulp.watch(paths.assetsImg + '**/*', ['images'])
 })
+
+// Test task --------------------------
+// Check that the build task copies assets
+// to /public and that the app runs.
+// ---------------------------------------
+gulp.task('test', cb => {
+  runsequence('build', ['test:app'], cb)
+})
+
+gulp.task('test:app', () => gulp.src(paths.testSpecs + 'app_spec.js', {read: false})
+  .pipe(mocha({reporter: 'spec'}))
+  // https://github.com/sindresorhus/gulp-mocha#test-suite-not-exiting
+  .once('error', () => {
+    process.exit(1)
+  })
+  .once('end', () => {
+    process.exit()
+  })
+)
 
 // Default task --------------------------
 // Lists out available tasks.
