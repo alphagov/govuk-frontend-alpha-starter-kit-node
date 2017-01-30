@@ -2,31 +2,34 @@
   "name": "govuk-frontend-alpha-starter-kit-node",
   "version": "0.0.1",
   "description": "A starter kit to be used for research (not for production use)",
-  "main": "index.js",
-  "scripts": {
-    "start": "gulp develop"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alphagov/govuk-frontend-alpha-starter-kit-node.git"
-  },
+  "repository": "alphagov/govuk-frontend-alpha-starter-kit-node",
   "author": "Government Digital Service developers <govuk-dev@digital.cabinet-office.gov.uk> (http://digital.cabinetoffice.gov.uk)",
   "license": "MIT",
+  "engines": {
+    "node": ">= 6.0"
+  },
   "bugs": {
     "url": "https://github.com/alphagov/govuk-frontend-alpha-starter-kit-node/issues"
   },
   "homepage": "https://github.com/alphagov/govuk-frontend-alpha-starter-kit-node#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "nunjucks": "^3.0.0"
+    "nunjucks": "^3.0.0",
+    "standard": "^8.6.0"
   },
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-mocha": "^3.0.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-watch": "^4.3.11",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "test": "standard && gulp test",
+    "start": "gulp develop"
   }
 }

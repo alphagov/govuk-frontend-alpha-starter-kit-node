@@ -8,5 +8,6 @@
 "public": "public/",
 "publicImg": "public/images/",
 "publicCss": "public/stylesheets/",
-"publicJs": "public/javascripts/"
+"publicJs": "public/javascripts/",
+"testSpecs": "test/specs/"
 }
