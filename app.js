@@ -19,12 +19,9 @@ nunjucks.configure(appViews, {
   express: app
 })
 
-// To serve static files such as images, CSS files, and JavaScript
-// files, we use the express.static built-in middleware function
-// in Express.
+// Serve static content for the app from the "public" directory
 app.use('/public', express.static(path.join(__dirname, '/public')))
-// To use multiple static assets directories, call the express.static middleware function multiple times,
-// here we are serving the govuk_frontend_alpha assets from the node_modules directory.
+// Serve the govuk_frontend_alpha assets from the node_modules directory
 app.use('/public', express.static(path.join(__dirname, '/node_modules/govuk_frontend_alpha/assets/')))
 app.use('/images/template', express.static(path.join(__dirname, '/node_modules/govuk_frontend_alpha/assets/images/template/')))
 
@@ -34,10 +31,12 @@ app.use(function (req, res, next) {
   next()
 })
 
+// Render views/index
 app.get('/', function (req, res) {
   res.render('index.njk')
 })
 
+// Log when app is running
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
