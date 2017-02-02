@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 const request = require('supertest')
-const app = require('../../app.js')
+const app = require('../../server.js')
 const path = require('path')
 const fs = require('fs')
 const assert = require('assert')
