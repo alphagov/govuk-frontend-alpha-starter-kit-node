@@ -71,7 +71,7 @@ gulp.task('develop', cb => {
 gulp.task('server', () => {
   nodemon({
     script: 'app.js',
-    ext: 'js, json',
+    ext: '*',
     ignore: [
       paths.public + '*',
       paths.assets + '*',
