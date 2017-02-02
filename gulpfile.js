@@ -70,7 +70,7 @@ gulp.task('develop', cb => {
 // ---------------------------------------
 gulp.task('server', () => {
   nodemon({
-    script: 'app.js',
+    script: 'server.js',
     ext: '*',
     ignore: [
       paths.public + '*',
