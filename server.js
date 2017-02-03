@@ -8,11 +8,10 @@ module.exports = app
 // Set the template engine to use nunjucks
 app.set('view engine', 'nunjucks')
 
-// Set the location of the component and template files
+// Set the location of the component files
 var appViews = [
   path.join(__dirname, 'views'),
-  path.join(__dirname, '/node_modules/govuk_frontend_alpha/components/'),
-  path.join(__dirname, '/node_modules/govuk_frontend_alpha/templates/')
+  path.join(__dirname, '/node_modules/govuk_frontend_alpha/components/')
 ]
 
 // Tell nunjucks we are using express to serve the templates within
