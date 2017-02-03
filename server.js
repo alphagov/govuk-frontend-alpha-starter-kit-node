@@ -21,11 +21,6 @@ nunjucks.configure(appViews, {
 
 // Serve static content for the app from the "public" directory
 app.use('/public', express.static(path.join(__dirname, '/public')))
-// Serve the govuk_frontend_alpha assets from the node_modules directory
-app.use('/public', express.static(path.join(__dirname, '/node_modules/govuk_frontend_alpha/assets/')))
-// For the default compiled stylesheet only - serve the govuk_frontend_alpha toolkit and template assets from the node_modules directory
-app.use('/images/toolkit', express.static(path.join(__dirname, '/node_modules/govuk_frontend_alpha/assets/images/toolkit/')))
-app.use('/images/template', express.static(path.join(__dirname, '/node_modules/govuk_frontend_alpha/assets/images/template/')))
 
 // Send assetPath to all views
 app.use(function (req, res, next) {
