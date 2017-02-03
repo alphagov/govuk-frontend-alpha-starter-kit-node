@@ -8,11 +8,9 @@ module.exports = app
 // Set the template engine to use nunjucks
 app.set('view engine', 'nunjucks')
 
-// Set the location of the component and template files
+// Set the location of the component files
 var appViews = [
-  path.join(__dirname, 'views'),
-  path.join(__dirname, '/node_modules/govuk_frontend_alpha/components/'),
-  path.join(__dirname, '/node_modules/govuk_frontend_alpha/templates/')
+  path.join(__dirname, 'views')
 ]
 
 // Tell nunjucks we are using express to serve the templates within
@@ -23,9 +21,6 @@ nunjucks.configure(appViews, {
 
 // Serve static content for the app from the "public" directory
 app.use('/public', express.static(path.join(__dirname, '/public')))
-// Serve the govuk_frontend_alpha assets from the node_modules directory
-app.use('/public', express.static(path.join(__dirname, '/node_modules/govuk_frontend_alpha/assets/')))
-app.use('/images/template', express.static(path.join(__dirname, '/node_modules/govuk_frontend_alpha/assets/images/template/')))
 
 // Send assetPath to all views
 app.use(function (req, res, next) {
