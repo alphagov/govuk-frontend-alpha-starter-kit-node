@@ -11,19 +11,11 @@ It's a Node & ExpressJS app, with Nunjucks for templating.
 2. Next, install the dependencies:
 
   ```sh
-  $ yarn
-  ```
-  or
-  ```sh
   $ npm install
   ```
 
 3. To run the web server:
 
-  ```sh
-  $ yarn start
-  ```
-  or
   ```sh
   $ npm start
   ```
