@@ -25,7 +25,9 @@ gulp.task('clean', () => {
 
 gulp.task('styles', () => {
   return gulp.src(paths.assetsScss + '**/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+      includePaths: ['node_modules/govuk_frontend_alpha/assets/scss/']
+    }).on('error', sass.logError))
     .pipe(gulp.dest(paths.publicCss))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.publicCss))
