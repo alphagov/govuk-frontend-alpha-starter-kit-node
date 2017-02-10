@@ -20,7 +20,7 @@ It's a Node & ExpressJS app, with Nunjucks for templating.
   $ npm start
   ```
 
-You'll be able to see the app running here: [localhost:3000](http://localhost:3000/)
+You'll be able to see the app running here: [localhost:3005](http://localhost:3005/)
 
 
 ## Application setup
