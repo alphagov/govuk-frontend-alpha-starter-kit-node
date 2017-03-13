@@ -44,3 +44,21 @@ app.get('/', function (req, res) {
 app.listen(3005, function () {
   console.log('Listening on port 3005    url: http://localhost:3005')
 })
+
+// Views for additional pages
+app.get('/confirmation', function (req, res) {
+  res.render('confirmation.njk')
+})
+
+app.get('/country-of-residence', function (req, res) {
+  res.render('country-of-residence.njk')
+})
+
+app.get('/date-of-birth', function (req, res) {
+  res.render('date-of-birth.njk')
+})
+
+app.get('/nationality', function (req, res) {
+  res.render('date-of-birth.njk')
+})
+
