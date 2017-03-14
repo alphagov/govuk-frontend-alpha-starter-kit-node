@@ -59,6 +59,6 @@ app.get('/date-of-birth', function (req, res) {
 })
 
 app.get('/nationality', function (req, res) {
-  res.render('date-of-birth.njk')
+  res.render('nationality.njk')
 })
 
